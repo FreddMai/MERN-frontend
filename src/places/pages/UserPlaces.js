@@ -19,7 +19,7 @@ const DUMMY_PLACES = [
   },
   {
     id: "p2",
-    title: "Empire State Building",
+    title: "Emp. State Building",
     description: "One of the most...",
     imageUrl:
       "https://upload.wikimedia.org/wikipedia/commons/4/47/Empire_State_Building_%28cropped%29.jpg",
