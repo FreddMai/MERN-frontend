@@ -2,6 +2,7 @@ import React, { useState, useContext } from "react";
 
 import Card from "../../shared/components/UIElements/Card";
 import Input from "../../shared/components/FormElements/Input";
+import ImageUpload from "../../shared/components/FormElements/ImageUpload";
 import Button from "../../shared/components/FormElements/Button";
 import ErrorModal from "../../shared/components/UIElements/ErrorModal";
 import LoadingSpinner from "../../shared/components/UIElements/LoadingSpinner";
@@ -77,6 +78,7 @@ const Auth = () => {
         {
           ...formState.inputs,
           name: undefined,
+          image: undefined,
         },
         formState.inputs.email.isValid && formState.inputs.password.isValid
       );
@@ -84,8 +86,14 @@ const Auth = () => {
       setFormData(
         {
           ...formState.inputs,
-          name: "",
-          isValid: false,
+          name: {
+            value: "",
+            isValid: false,
+          },
+          image: {
+            value: null,
+            isValid: false,
+          },
         },
         false
       );
@@ -112,6 +120,7 @@ const Auth = () => {
               onInput={inputHandler}
             />
           )}
+          {!isLogin && <ImageUpload center id="image" onInput={inputHandler} />}
           <Input
             element="input"
             id="email"
